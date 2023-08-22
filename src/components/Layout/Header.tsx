@@ -1,3 +1,3 @@
 export function Header() {
-  return <header>this will be a header</header>;
+  return <header className="container">this will be a header</header>;
 }

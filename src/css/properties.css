@@ -1,0 +1,26 @@
+/*...........................*/
+/*CUSTOM-PROPERTIES..........*/
+/*...........................*/
+
+:root {
+  /* colors */
+  --c-black: 13 13 13;
+  --c-white: 216 217 215;
+  --c-primary: 99 94 242;
+  --c-dark: 89 95 217;
+  --c-accent: 242 218 94;
+
+  /* font-families */
+  --ff-sans: "Roboto", sans-serif;
+  --ff-mono: "Roboto Mono", monospace;
+
+  /* font-sizes */
+  --fs-900: 9.375rem;
+  --fs-800: 6.25rem;
+  --fs-700: 3.5rem;
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.875rem;
+}

@@ -13,7 +13,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <div>
       <Header />
-      <main>{children}</main>
+      <main className="container bg-primary">{children}</main>
       <Footer />
     </div>
   );
