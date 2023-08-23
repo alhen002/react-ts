@@ -1,5 +1,5 @@
 import { Card as CardType } from "../../../src/types";
-import React from "react";
+import React, { ReactElement } from "react";
 type CardProps = {
   card: CardType;
   handleUpdateCard: (updatedCard: CardType) => void;
@@ -8,9 +8,9 @@ type CardProps = {
 export function Card({
   card: { id, name, description, isComplete },
   handleUpdateCard,
-}: CardProps) {
+}: CardProps): ReactElement {
   // local state here
-  const [editing, setEditing] = React.useState(false);
+  const [editing, setEditing] = React.useState<boolean>(false);
 
   // handlers here
   const handleToggleCompleted = () =>

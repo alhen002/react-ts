@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Card } from "./Layout/Card";
 import { Card as CardType } from "../types";
 
-export function Cards() {
-  const [cards, setCards] = React.useState([
+export function Cards(): ReactElement {
+  const [cards, setCards] = React.useState<CardType[]>([
     {
       id: 1,
       name: "Card1",

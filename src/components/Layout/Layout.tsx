@@ -1,4 +1,4 @@
-import React from "react";
+import { ReactElement, ReactNode } from "react";
 
 // components
 
@@ -6,10 +6,10 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 
 type LayoutProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children }: LayoutProps): ReactElement {
   return (
     <div>
       <Header />
