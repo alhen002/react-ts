@@ -1,46 +1,60 @@
+import { Card as CardType } from "../../../src/types";
+import React from "react";
 type CardProps = {
-  card: {
-    id: number;
-    name: {
-      title: string;
-      editing: boolean;
-    };
-    description: string;
-    isComplete: boolean;
-  };
-  handleToggleCompleted: (id: number) => void;
-  toggleEditting: (id: number) => void;
+  card: CardType;
+  handleUpdateCard: (updatedCard: CardType) => void;
 };
 
 export function Card({
-  card: {
-    id,
-    name: { title, editing },
-    description,
-    isComplete,
-  },
-  handleToggleCompleted,
-  toggleEditting,
+  card: { id, name, description, isComplete },
+  handleUpdateCard,
 }: CardProps) {
+  // local state here
+  const [editing, setEditing] = React.useState(false);
+  // handlers here
+  const handleToggleCompleted = () =>
+    handleUpdateCard({
+      id,
+      name,
+      description,
+      isComplete: !isComplete,
+    });
+
+  const handleUpdateName = (event: React.ChangeEvent<HTMLInputElement>) => {
+    handleUpdateCard({
+      id,
+      name: event.target.value,
+      description,
+      isComplete,
+    });
+  };
+
+  const handleEdit = () => {
+    setEditing(!editing);
+  };
+
+  const handleEditWithKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "Enter") {
+      setEditing(!editing);
+    }
+  };
+
   return (
     <article>
       {editing ? (
-        <input type="text" value={title} />
+        <input
+          onKeyDown={handleEditWithKeyDown}
+          type="text"
+          value={name}
+          onChange={handleUpdateName}
+        />
       ) : (
-        <h2
-          onDoubleClick={() => {
-            toggleEditting(id);
-          }}
-        >
-          {title}
-        </h2>
+        <h2 onDoubleClick={handleEdit}>{name}</h2>
       )}
 
       <p>{description}</p>
       {isComplete ? <p>Complete</p> : <p>Incomplete</p>}
-      <button onClick={() => handleToggleCompleted(id)}>
-        Toggle Completed
-      </button>
+      <button onClick={handleToggleCompleted}>Toggle Completed</button>
     </article>
   );
 }
