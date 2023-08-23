@@ -1,5 +1,14 @@
 import { ReactElement } from "react";
 
-export function Header(): ReactElement {
-  return <header className="container">this will be a header</header>;
+type HeaderProps = {
+  children?: ReactElement;
+  title: string;
+};
+
+export function Header({ title }: HeaderProps): ReactElement {
+  return (
+    <header className="container">
+      <h1>{title}</h1>
+    </header>
+  );
 }

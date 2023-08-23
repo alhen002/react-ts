@@ -11,10 +11,10 @@ type LayoutProps = {
 
 export function Layout({ children }: LayoutProps): ReactElement {
   return (
-    <div>
-      <Header />
+    <>
+      <Header title="hello" />
       <main className="container bg-primary">{children}</main>
       <Footer />
-    </div>
+    </>
   );
 }
