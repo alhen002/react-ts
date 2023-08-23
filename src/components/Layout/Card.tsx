@@ -1,20 +1,41 @@
 type CardProps = {
   card: {
     id: number;
-    name: string;
+    name: {
+      title: string;
+      editing: boolean;
+    };
     description: string;
     isComplete: boolean;
   };
   handleToggleCompleted: (id: number) => void;
+  toggleEditting: (id: number) => void;
 };
 
 export function Card({
-  card: { id, name, description, isComplete },
+  card: {
+    id,
+    name: { title, editing },
+    description,
+    isComplete,
+  },
   handleToggleCompleted,
+  toggleEditting,
 }: CardProps) {
   return (
     <article>
-      <h2>{name}</h2>
+      {editing ? (
+        <input onEnter="" type="text" value={title} />
+      ) : (
+        <h2
+          onDoubleClick={() => {
+            toggleEditting(id);
+          }}
+        >
+          {title}
+        </h2>
+      )}
+
       <p>{description}</p>
       {isComplete ? <p>Complete</p> : <p>Incomplete</p>}
       <button onClick={() => handleToggleCompleted(id)}>
