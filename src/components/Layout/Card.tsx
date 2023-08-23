@@ -11,6 +11,7 @@ export function Card({
 }: CardProps) {
   // local state here
   const [editing, setEditing] = React.useState(false);
+
   // handlers here
   const handleToggleCompleted = () =>
     handleUpdateCard({
