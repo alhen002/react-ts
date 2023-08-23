@@ -54,8 +54,17 @@ export function Card({
       )}
 
       <p>{description}</p>
-      {isComplete ? <p>Complete</p> : <p>Incomplete</p>}
-      <button onClick={handleToggleCompleted}>Toggle Completed</button>
+      {isComplete ? (
+        <>
+          <p>Complete</p>
+          <button onClick={handleToggleCompleted}>Redo</button>
+        </>
+      ) : (
+        <>
+          <p>Incomplete</p>
+          <button onClick={handleToggleCompleted}>Complete</button>
+        </>
+      )}
     </article>
   );
 }
