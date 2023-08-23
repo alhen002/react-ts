@@ -25,7 +25,7 @@ export function Card({
   return (
     <article>
       {editing ? (
-        <input onEnter="" type="text" value={title} />
+        <input type="text" value={title} />
       ) : (
         <h2
           onDoubleClick={() => {
