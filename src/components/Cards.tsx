@@ -1,5 +1,5 @@
 import React, { ReactElement } from "react";
-import { Card } from "./Layout/Card";
+import { Card } from "./Card";
 import { Card as CardType } from "../types";
 
 export function Cards(): ReactElement {

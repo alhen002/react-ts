@@ -1,4 +1,4 @@
-import { Card as CardType } from "../../../src/types";
+import { Card as CardType } from "../types";
 import React, { ReactElement } from "react";
 type CardProps = {
   card: CardType;
