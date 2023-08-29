@@ -1,15 +1,22 @@
 // components
 import { Layout } from "./components/Layout/Layout";
-import { Cards } from "./components/Cards";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+//pages
+import Home from "./pages/Home";
+import About from "./pages/about";
+
+export default function App() {
   return (
-    <Layout>
-      <h1>Hello, world!</h1>
-      <Cards />
-    </Layout>
+    <>
+      <Router>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+        </Layout>
+      </Router>
+    </>
   );
 }
-
-export default App;
-
