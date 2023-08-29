@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 //pages
 import Home from "./pages/Home";
-import About from "./pages/about";
+import About from "./pages/About";
 
 export default function App() {
   return (
