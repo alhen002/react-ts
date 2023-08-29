@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout } from "./Layout/Layout";
+import { Layout } from "../components/Layout/Layout";
 import { Outlet } from "react-router-dom";
 
 export default function Root(): React.ReactElement {
